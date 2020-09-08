@@ -40,6 +40,15 @@ public class Ventana extends JFrame {
 		boton2 = new JButton();
 		boton2.setText("Ejercicio 2");
 		boton2.setBounds(170, 150, 140, 30);
+		boton2.addActionListener(new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				Ejercicio2 eje2= new Ejercicio2();
+				eje2.setVisible(true);
+			}
+		});
 		
 		boton3 = new JButton();
 		boton3.setText("Ejercicio 3");
