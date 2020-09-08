@@ -1,5 +1,8 @@
 package Dominio;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -24,6 +27,15 @@ public class Ventana extends JFrame {
 		boton = new JButton();
 		boton.setText("Ejercicio 1");
 		boton.setBounds(170, 100, 140, 30);
+		boton.addActionListener(new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				Ejercicio1 eje= new Ejercicio1();
+				eje.setVisible(true);
+			}
+		});
 		
 		boton2 = new JButton();
 		boton2.setText("Ejercicio 2");
