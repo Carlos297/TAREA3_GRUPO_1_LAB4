@@ -146,15 +146,15 @@ public class Ejercicio2 extends JFrame {
 					
 					textField_Promedio.setText(String.valueOf(formato1.format(prom)));
 					
-					if (prom>=8 && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
+					if ((n1>=8 && n2>=8 && n3>=8) && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
 					{
 						textField_Condicion.setText("Promocionado");
 					} 
-					else if (prom>=6 && prom<8 && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
+					if (((n1<8)&&(n1>=6)&&(n2<8)&&(n2>=6)&&(n3<8)&&(n3>=6)) && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
 					{
 						textField_Condicion.setText("Regular");
 					}
-					else if (prom<6 || comboBox_TPS.getSelectedItem().toString()=="Desaprobado")
+					if (n1<6 || n2<6 || n3<6 || comboBox_TPS.getSelectedItem().toString()=="Desaprobado")
 					{
 						textField_Condicion.setText("Libre");
 					}
