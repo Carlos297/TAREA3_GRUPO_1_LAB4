@@ -115,10 +115,3 @@ public class Ejercicio1 extends JFrame {
 }
 
 
-/*if(campoTexto.getText().length()==0){
-     System.out.println("No hay texto");
-}
-else{
-     System.out.println("Si hay texto");
-}
-*/
