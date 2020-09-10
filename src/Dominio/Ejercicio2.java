@@ -1,6 +1,7 @@
 package Dominio;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -11,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 import javax.swing.JSeparator;
@@ -24,6 +26,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
+import javax.swing.JOptionPane;
 
 public class Ejercicio2 extends JFrame {
 
@@ -107,31 +111,116 @@ public class Ejercicio2 extends JFrame {
 		panel_1.add(comboBox_TPS);
 		
 		textField_Nota1 = new JTextField();
+		textField_Nota1.setColumns(2);
 		textField_Nota1.setBounds(130, 28, 131, 20);
 		panel_1.add(textField_Nota1);
-		textField_Nota1.setColumns(10);
+		
 		
 		textField_Nota2 = new JTextField();
-		textField_Nota2.setColumns(10);
+		textField_Nota2.setColumns(2);
 		textField_Nota2.setBounds(130, 64, 131, 20);
 		panel_1.add(textField_Nota2);
 		
 		textField_Nota3 = new JTextField();
-		textField_Nota3.setColumns(10);
+		textField_Nota3.setColumns(2);
 		textField_Nota3.setBounds(130, 110, 131, 20);
 		panel_1.add(textField_Nota3);
 		
+		
+		
+		
 		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if(ValidacionTextField(textField_Nota1.getText()) && ValidacionTextField(textField_Nota2.getText()) && ValidacionTextField(textField_Nota3.getText()))
+				{
+					int n1 = Integer.parseInt(textField_Nota1.getText().trim());
+					int n2 = Integer.parseInt(textField_Nota2.getText().trim());
+					int n3 = Integer.parseInt(textField_Nota3.getText().trim());
+					int suma = n1+n2+n3;
+					double prom = (double)suma/3;
+					
+					
+					DecimalFormat formato1 = new DecimalFormat("#.00");
+					
+					textField_Promedio.setText(String.valueOf(formato1.format(prom)));
+					
+					if (prom>=8 && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
+					{
+						textField_Condicion.setText("Promocionado");
+					} 
+					else if (prom>=6 && prom<8 && comboBox_TPS.getSelectedItem().toString()=="Aprobado")
+					{
+						textField_Condicion.setText("Regular");
+					}
+					else if (prom<6 || comboBox_TPS.getSelectedItem().toString()=="Desaprobado")
+					{
+						textField_Condicion.setText("Libre");
+					}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Ingrese correctamente las NOTAS [0-10]");
+					textField_Nota1.setText("");
+					textField_Nota2.setText("");
+					textField_Nota3.setText("");
+					textField_Promedio.setText("");
+					textField_Condicion.setText("");
+				}
+			
+				
+			}
+
+			private boolean ValidacionTextField(String text) {
+			
+				boolean flag = false;
+				try
+				{
+					int nro = Integer.parseInt(text);
+					if (nro>=0 && nro<=10)
+					{
+						flag = true;
+					}
+				}
+				catch(NumberFormatException e)
+				{ 		
+					flag = false;
+				}
+				
+				return flag;
+			}
+		});
+
+		
 		btnCalcular.setBounds(351, 115, 89, 43);
 		contentPane.add(btnCalcular);
 		
 		JButton btnNuevo = new JButton("Nuevo");
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField_Nota1.setText("");
+				textField_Nota2.setText("");
+				textField_Nota3.setText("");
+				textField_Promedio.setText("");
+				textField_Condicion.setText("");
+				
+			}
+		});
 		btnNuevo.setBounds(351, 45, 89, 43);
 		contentPane.add(btnNuevo);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				setVisible(false);
+			}
+		});
 		btnSalir.setBounds(351, 183, 89, 43);
 		contentPane.add(btnSalir);
 		
 	}
 }
+
+
