@@ -79,19 +79,19 @@ public class Ejercicio1 extends JFrame {
 				{
 					txtNombre.setBackground(Color.red);
 				}
-				else if(txtApellido.getText().equals(""))
+				if(txtApellido.getText().equals(""))
 				{
 					txtApellido.setBackground(Color.red);
 				}
-				else if(txtTelefono.getText().equals(""))
+				if(txtTelefono.getText().equals(""))
 				{
 					txtTelefono.setBackground(Color.red);
 				}
-				else if(txtMail.getText().equals(""))
+				if(txtMail.getText().equals(""))
 				{
 					txtMail.setBackground(Color.red);
 				}
-				else
+				if(txtNombre.getText().length()!=0 && txtApellido.getText().length()!=0 && txtTelefono.getText().length()!=0 && txtMail.getText().length()!=0)
 				{
 					lblMostar.setText("<html>Los datos ingresados fueron: NOMBRE: "+ txtNombre.getText()+ "\n - APELLIDO: "+ txtApellido.getText()+"- TELEFONO: "+ 
 							txtTelefono.getText() +"- MAIL: "+txtMail.getText()+"</html>");
@@ -113,3 +113,12 @@ public class Ejercicio1 extends JFrame {
 		
 	}
 }
+
+
+/*if(campoTexto.getText().length()==0){
+     System.out.println("No hay texto");
+}
+else{
+     System.out.println("Si hay texto");
+}
+*/
