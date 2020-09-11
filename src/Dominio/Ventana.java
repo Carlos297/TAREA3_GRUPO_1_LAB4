@@ -22,10 +22,10 @@ public class Ventana extends JFrame {
 	
 	public Ventana(){
 		setResizable(false);
-		
+		setLocationRelativeTo ( null );
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(400, 300);
-		setLocation(350, 350);
+		setLocation(650, 240);
 		getContentPane().setLayout(null);
 		
 		boton = new JButton();
@@ -73,6 +73,7 @@ public class Ventana extends JFrame {
 		getContentPane().add(lblNewLabel);
 		
 	}
+
 	
 	public void CambiarVisibilidad (boolean estado)
 	{
