@@ -19,11 +19,11 @@ public class Ejercicio1 extends JFrame {
 	private JTextField txtNombre;
 	private JTextField txtApellido;
 	private JTextField txtTelefono;
-	private JTextField txtMail;
+	private JTextField txtFecha;
 
 	public Ejercicio1() 
 	{
-		setTitle("Ejercicio 1");
+		setTitle("Contactos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 486, 435);
 		contentPane = new JPanel();
@@ -43,8 +43,8 @@ public class Ejercicio1 extends JFrame {
 		lblNewLabel_2.setBounds(24, 126, 73, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Mail:");
-		lblNewLabel_3.setBounds(24, 170, 73, 14);
+		JLabel lblNewLabel_3 = new JLabel("Fecha Nac.:");
+		lblNewLabel_3.setBounds(24, 170, 93, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		txtNombre = new JTextField();
@@ -62,10 +62,10 @@ public class Ejercicio1 extends JFrame {
 		contentPane.add(txtTelefono);
 		txtTelefono.setColumns(10);
 		
-		txtMail = new JTextField();
-		txtMail.setBounds(124, 167, 316, 20);
-		contentPane.add(txtMail);
-		txtMail.setColumns(10);
+		txtFecha = new JTextField();
+		txtFecha.setBounds(124, 167, 316, 20);
+		contentPane.add(txtFecha);
+		txtFecha.setColumns(10);
 		
 		JLabel lblMostar = new JLabel("Los datos ingresados fueron: ");
 		lblMostar.setBounds(24, 302, 416, 72);
@@ -87,14 +87,14 @@ public class Ejercicio1 extends JFrame {
 				{
 					txtTelefono.setBackground(Color.red);
 				}
-				if(txtMail.getText().equals(""))
+				if(txtFecha.getText().equals(""))
 				{
-					txtMail.setBackground(Color.red);
+					txtFecha.setBackground(Color.red);
 				}
-				if(txtNombre.getText().length()!=0 && txtApellido.getText().length()!=0 && txtTelefono.getText().length()!=0 && txtMail.getText().length()!=0)
+				if(txtNombre.getText().length()!=0 && txtApellido.getText().length()!=0 && txtTelefono.getText().length()!=0 && txtFecha.getText().length()!=0)
 				{
 					lblMostar.setText("<html>Los datos ingresados fueron: NOMBRE: "+ txtNombre.getText()+ "\n - APELLIDO: "+ txtApellido.getText()+"- TELEFONO: "+ 
-							txtTelefono.getText() +"- MAIL: "+txtMail.getText()+"</html>");
+							txtTelefono.getText() +"- FECHA NACIMIENTO: "+txtFecha.getText()+"</html>");
 					
 					txtNombre.setText("");
 					txtNombre.setBackground(Color.white);
@@ -102,12 +102,12 @@ public class Ejercicio1 extends JFrame {
 					txtApellido.setBackground(Color.white);
 					txtTelefono.setText("");
 					txtTelefono.setBackground(Color.white);
-					txtMail.setText("");
-					txtMail.setBackground(Color.white);
+					txtFecha.setText("");
+					txtFecha.setBackground(Color.white);
 				}
 			}
 		});
-		btnMostrar.setBounds(24, 210, 416, 23);
+		btnMostrar.setBounds(284, 198, 156, 36);
 		contentPane.add(btnMostrar);
 		
 		

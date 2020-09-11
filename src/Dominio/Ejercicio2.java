@@ -71,11 +71,13 @@ public class Ejercicio2 extends JFrame {
 		panel.add(lblCondicion);
 		
 		textField_Promedio = new JTextField();
+		textField_Promedio.setEditable(false);
 		textField_Promedio.setBounds(194, 35, 138, 20);
 		panel.add(textField_Promedio);
 		textField_Promedio.setColumns(10);
 		
 		textField_Condicion = new JTextField();
+		textField_Condicion.setEditable(false);
 		textField_Condicion.setColumns(10);
 		textField_Condicion.setBounds(194, 75, 138, 20);
 		panel.add(textField_Condicion);
@@ -83,24 +85,24 @@ public class Ejercicio2 extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Notas del Estudiante", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setToolTipText("dsfggnfnfgn");
-		panel_1.setBounds(34, 23, 295, 232);
+		panel_1.setBounds(34, 23, 295, 224);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNota = new JLabel("Nota 1");
-		lblNota.setBounds(10, 31, 46, 14);
+		JLabel lblNota = new JLabel("Nota 1:");
+		lblNota.setBounds(42, 39, 46, 14);
 		panel_1.add(lblNota);
 		
-		JLabel lblNota_4 = new JLabel("Nota 2");
-		lblNota_4.setBounds(10, 67, 46, 14);
+		JLabel lblNota_4 = new JLabel("Nota 2:");
+		lblNota_4.setBounds(42, 82, 46, 14);
 		panel_1.add(lblNota_4);
 		
-		JLabel lblNota_1 = new JLabel("Nota 3");
-		lblNota_1.setBounds(10, 113, 46, 14);
+		JLabel lblNota_1 = new JLabel("Nota 3:");
+		lblNota_1.setBounds(42, 126, 46, 14);
 		panel_1.add(lblNota_1);
 		
 		JLabel lblTps = new JLabel("TPS");
-		lblTps.setBounds(10, 171, 46, 14);
+		lblTps.setBounds(42, 171, 46, 14);
 		panel_1.add(lblTps);
 		
 		JComboBox comboBox_TPS = new JComboBox();
@@ -112,18 +114,18 @@ public class Ejercicio2 extends JFrame {
 		
 		textField_Nota1 = new JTextField();
 		textField_Nota1.setColumns(2);
-		textField_Nota1.setBounds(130, 28, 131, 20);
+		textField_Nota1.setBounds(130, 36, 131, 20);
 		panel_1.add(textField_Nota1);
 		
 		
 		textField_Nota2 = new JTextField();
 		textField_Nota2.setColumns(2);
-		textField_Nota2.setBounds(130, 64, 131, 20);
+		textField_Nota2.setBounds(130, 79, 131, 20);
 		panel_1.add(textField_Nota2);
 		
 		textField_Nota3 = new JTextField();
 		textField_Nota3.setColumns(2);
-		textField_Nota3.setBounds(130, 110, 131, 20);
+		textField_Nota3.setBounds(130, 123, 131, 20);
 		panel_1.add(textField_Nota3);
 		
 		

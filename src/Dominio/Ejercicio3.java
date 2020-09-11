@@ -6,9 +6,12 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio3 extends JFrame
 {
@@ -16,7 +19,7 @@ public class Ejercicio3 extends JFrame
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
+	private JTextField textFieldCantHorasComputador;
 	public Ejercicio3() {
 		setTitle("Seleccion multiple");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -29,21 +32,26 @@ public class Ejercicio3 extends JFrame
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Elije un sistema operativo");
-		lblNewLabel.setBounds(35, 17, 135, 14);
-		panel.add(lblNewLabel);
+		ButtonGroup grupo = new ButtonGroup();
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Windows");
-		rdbtnNewRadioButton.setBounds(205, 13, 90, 23);
-		panel.add(rdbtnNewRadioButton);
+		JLabel lblElijeSistemaOperativo = new JLabel("Elije un sistema operativo");
+		lblElijeSistemaOperativo.setBounds(35, 17, 146, 14);
+		panel.add(lblElijeSistemaOperativo);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Mac");
-		rdbtnNewRadioButton_1.setBounds(314, 13, 56, 23);
-		panel.add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnWindows = new JRadioButton("Windows");
+		rdbtnWindows.setBounds(205, 13, 90, 23);
+		grupo.add(rdbtnWindows);
+		panel.add(rdbtnWindows);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Linux");
-		rdbtnNewRadioButton_2.setBounds(405, 13, 56, 23);
-		panel.add(rdbtnNewRadioButton_2);
+		JRadioButton rdbtnMac = new JRadioButton("Mac");
+		rdbtnMac.setBounds(314, 13, 56, 23);
+		grupo.add(rdbtnMac);
+		panel.add(rdbtnMac);
+		
+		JRadioButton rdbtnLinux = new JRadioButton("Linux");
+		rdbtnLinux.setBounds(405, 13, 56, 23);
+		grupo.add(rdbtnLinux);
+		panel.add(rdbtnLinux);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -51,38 +59,46 @@ public class Ejercicio3 extends JFrame
 		getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Elije una especialidad");
-		lblNewLabel_1.setBounds(63, 52, 115, 14);
-		panel_1.add(lblNewLabel_1);
+		JLabel lblElijeEspecialidad = new JLabel("Elije una especialidad");
+		lblElijeEspecialidad.setBounds(47, 52, 131, 14);
+		panel_1.add(lblElijeEspecialidad);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Programacion");
-		chckbxNewCheckBox.setBounds(225, 12, 141, 23);
-		panel_1.add(chckbxNewCheckBox);
+		JCheckBox chckbxProgramacion = new JCheckBox("Programacion");
+		chckbxProgramacion.setBounds(225, 12, 141, 23);
+		panel_1.add(chckbxProgramacion);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Administracion");
-		chckbxNewCheckBox_1.setBounds(225, 47, 141, 23);
-		panel_1.add(chckbxNewCheckBox_1);
+		JCheckBox chckbxAdministracion = new JCheckBox("Administracion");
+		chckbxAdministracion.setBounds(225, 47, 141, 23);
+		panel_1.add(chckbxAdministracion);
 		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Dise\u00F1o grafico");
-		chckbxNewCheckBox_2.setBounds(225, 82, 141, 23);
-		panel_1.add(chckbxNewCheckBox_2);
+		JCheckBox chckbxDisGrafico = new JCheckBox("Dise\u00F1o grafico");
+		chckbxDisGrafico.setBounds(225, 82, 141, 23);
+		panel_1.add(chckbxDisGrafico);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(24, 232, 496, 97);
 		getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("Cantidad de horas en el computador:");
-		lblNewLabel_2.setBounds(93, 26, 225, 14);
-		panel_2.add(lblNewLabel_2);
+		JLabel lblCantHorasComputador = new JLabel("Cantidad de horas en el computador:");
+		lblCantHorasComputador.setBounds(93, 26, 225, 14);
+		panel_2.add(lblCantHorasComputador);
 		
-		textField = new JTextField();
-		textField.setBounds(328, 23, 86, 20);
-		panel_2.add(textField);
-		textField.setColumns(10);
+		textFieldCantHorasComputador = new JTextField();
+		textFieldCantHorasComputador.setBounds(328, 23, 86, 20);
+		panel_2.add(textFieldCantHorasComputador);
+		textFieldCantHorasComputador.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Aceptar");
-		btnNewButton.setBounds(397, 63, 89, 23);
-		panel_2.add(btnNewButton);
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio3_Resultado x = new Ejercicio3_Resultado();
+				
+				
+				x.setVisible(true);
+			}
+		});
+		btnAceptar.setBounds(397, 63, 89, 23);
+		panel_2.add(btnAceptar);
 	}
 }
