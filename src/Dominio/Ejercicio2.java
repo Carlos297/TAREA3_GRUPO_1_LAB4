@@ -32,6 +32,10 @@ import javax.swing.JOptionPane;
 public class Ejercicio2 extends JFrame {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNombre;
 	private JTextField txtApellido;

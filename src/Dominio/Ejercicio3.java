@@ -3,12 +3,14 @@ package Dominio;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -92,10 +94,40 @@ public class Ejercicio3 extends JFrame
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Ejercicio3_Resultado x = new Ejercicio3_Resultado();
 				
+								
 				
-				x.setVisible(true);
+				String txtResultadoSistemaOperativo = "";
+				String txtResultadoEspecialidad = "";
+				
+				if(rdbtnLinux.isSelected()) {
+					txtResultadoSistemaOperativo = rdbtnLinux.getText();
+				} else if(rdbtnMac.isSelected()){
+					txtResultadoSistemaOperativo = rdbtnMac.getText();
+				} else if(rdbtnWindows.isSelected()){
+					txtResultadoSistemaOperativo = rdbtnWindows.getText();
+				}
+				
+				if(chckbxProgramacion.isSelected()) {
+					txtResultadoEspecialidad = chckbxProgramacion.getText();
+				} if(chckbxAdministracion.isSelected()){
+					txtResultadoEspecialidad = chckbxAdministracion.getText();
+				} if(chckbxDisGrafico.isSelected()){
+					txtResultadoEspecialidad = chckbxDisGrafico.getText();
+				} 
+				if(chckbxProgramacion.isSelected() && chckbxAdministracion.isSelected())	{
+					txtResultadoEspecialidad = chckbxProgramacion.getText() + " - " + chckbxAdministracion.getText();
+				} if (chckbxProgramacion.isSelected() && chckbxDisGrafico.isSelected()) {
+					txtResultadoEspecialidad = chckbxProgramacion.getText() + " - " + chckbxDisGrafico.getText();
+				} if (chckbxAdministracion.isSelected() && chckbxDisGrafico.isSelected()) {
+					txtResultadoEspecialidad = chckbxAdministracion.getText() + " - " + chckbxDisGrafico.getText();
+				} if(chckbxProgramacion.isSelected() && chckbxAdministracion.isSelected() && chckbxDisGrafico.isSelected()){
+					txtResultadoEspecialidad =  chckbxProgramacion.getText() + " - " + chckbxAdministracion.getText() + " - " + chckbxDisGrafico.getText();
+				}
+
+				
+				JOptionPane.showMessageDialog(null, txtResultadoSistemaOperativo + " - " +  txtResultadoEspecialidad + " - " + textFieldCantHorasComputador.getText());
+				
 			}
 		});
 		btnAceptar.setBounds(397, 63, 89, 23);

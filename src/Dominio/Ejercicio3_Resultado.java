@@ -51,6 +51,11 @@ public class Ejercicio3_Resultado extends JFrame {
 	{
 		setVisible(true);
 	}
+
+	public void Resultado(String txtResultadoSistemaOperativo) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

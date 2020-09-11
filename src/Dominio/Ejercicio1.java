@@ -15,6 +15,10 @@ import java.awt.event.ActionEvent;
 
 public class Ejercicio1 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNombre;
 	private JTextField txtApellido;
