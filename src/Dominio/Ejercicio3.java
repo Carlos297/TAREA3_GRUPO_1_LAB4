@@ -126,7 +126,7 @@ public class Ejercicio3 extends JFrame
 				}
 
 				
-				JOptionPane.showMessageDialog(null, txtResultadoSistemaOperativo + " - " +  txtResultadoEspecialidad + " - " + textFieldCantHorasComputador.getText());
+				JOptionPane.showMessageDialog(null, txtResultadoSistemaOperativo + " - " +  txtResultadoEspecialidad + " - " + textFieldCantHorasComputador.getText() + " Hs");
 				
 			}
 		});
