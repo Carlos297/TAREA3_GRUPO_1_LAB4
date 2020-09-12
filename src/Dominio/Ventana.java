@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Frame;
 
 public class Ventana extends JFrame {
 
@@ -16,17 +18,19 @@ public class Ventana extends JFrame {
 	private JButton boton;
 	private JButton boton2;
 	private JButton boton3;
+	private JLabel lblNewLabel;
 	
 	public Ventana(){
-		
+		setResizable(false);
+		setLocationRelativeTo ( null );
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(500, 500);
-		setLocation(350, 350);
-		setLayout(null);
+		setSize(400, 300);
+		setLocation(650, 240);
+		getContentPane().setLayout(null);
 		
 		boton = new JButton();
 		boton.setText("Ejercicio 1");
-		boton.setBounds(170, 100, 140, 30);
+		boton.setBounds(127, 67, 140, 30);
 		boton.addActionListener(new ActionListener() 
 		{
 			@Override
@@ -39,7 +43,7 @@ public class Ventana extends JFrame {
 		
 		boton2 = new JButton();
 		boton2.setText("Ejercicio 2");
-		boton2.setBounds(170, 150, 140, 30);
+		boton2.setBounds(127, 120, 140, 30);
 		boton2.addActionListener(new ActionListener() 
 		{
 			@Override
@@ -52,13 +56,24 @@ public class Ventana extends JFrame {
 		
 		boton3 = new JButton();
 		boton3.setText("Ejercicio 3");
-		boton3.setBounds(170, 200, 140, 30);
+		boton3.setBounds(127, 172, 140, 30);
+		boton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio3 ventanaEjercicio3 = new Ejercicio3();
+				ventanaEjercicio3.setVisible(true);
+			}
+		});
 		
 		getContentPane().add(boton);
 		getContentPane().add(boton2);
 		getContentPane().add(boton3);
 		
+		lblNewLabel = new JLabel("GRUPO NRO: 1");
+		lblNewLabel.setBounds(32, 25, 86, 14);
+		getContentPane().add(lblNewLabel);
+		
 	}
+
 	
 	public void CambiarVisibilidad (boolean estado)
 	{

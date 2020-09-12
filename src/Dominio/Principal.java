@@ -9,7 +9,6 @@ public class Principal {
 		x.CambiarVisibilidad(true);
 		
 		
-		
 	}
 
 }
